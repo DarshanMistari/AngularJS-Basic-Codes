@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="databind-DarshanMistari">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var myvar = angular.module("databind-DarshanMistari",[]);
+        myvar.controller("infoctrl",function($scope){
+            $scope.name="Darshan Mistari";
+            $scope.number=3774986;
+        });
+    </script>
+
+</head>
+<body>
+    <div ng-controller="infoctrl">
+        <div>
+            Enter the Name : <input type="text"  ng-model="name">
+            Enter the <input type="text" ng-model="number">
+             <p>My Name is {{name}}
+             </p>
+            <p>My Number is {{number}}</p>
+            <p></p>
+        </div>
+    </div>
+</body>
+</html>
