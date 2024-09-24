@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="event_DarshanMistari">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var myvar = angular.module("event_DarshanMistari", []);
+        myvar.controller("myctrl", function ($scope) {
+            $scope.massage = 'This is Demo ';
+
+            $scope.singleclick = function () {
+                $scope.massage = "This is Single Click Demo";
+            }
+
+            $scope.doubleclick = function () {
+                $scope.massage = "This is Double Cilck Demo";
+            }
+            $scope.mouseover = function () {
+                $scope.massage = "This Mouse is Over the Button";
+            }
+            $scope.mouseleave = function () {
+                $scope.massage = "This Mouse Exite From Button";
+            }
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div ng-controller="myctrl">
+        <button ng-click="singleclick()" ng-dblclick="doubleclick()" ng-mouseover="mouseover()"
+            ng-mouseleave="mouseleave()">click Here for Demo</button>
+
+        <p>{{ massage }}</p>
+    </div>
+
+</body>
+
+</html>
