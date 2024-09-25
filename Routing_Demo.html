@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="routingdemo_DarshanMistari">
+<head>
+    <title>SPA Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script>
+        var myvar = angular.module("routingdemo_DarshanMistari",['ngRoute']);
+        var app = angular.module("myApp",['ngRoute']);
+        myvar.config(function($routeProvider){
+
+            $routeProvider
+            .when('/home',{
+                templateUrl:'homePage.html',
+                controller:'homecontroller'
+
+            })
+            .when('/contact',{
+                templateUrl:'contactUs.html',
+                controller:'contactcontroller'
+            })
+            .otherwise({
+                redirectTo:'homePage.html'
+            });
+        });
+
+        myvar.controller("homecontroller",function($scope){
+            $scope.collegename = "IMRD College , Shahada";
+        });
+
+        myvar.controller("contactcontroller",function($scope){
+            $scope.emailid = "imrdshahada@gmail.com";
+        });
+    </script>
+</head>
+<body>
+    <a href="#!/home">Home</a>
+    <a href="#!/contact">Contact Us</a>
+
+    <div ng-view></div>
+</body>
+</html>
