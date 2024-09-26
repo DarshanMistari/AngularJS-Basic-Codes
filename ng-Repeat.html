@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="ngrepeat_DarshanMistari">
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <script>
+    var myvar = angular.module("ngrepeat_DarshanMistari",[]);
+    myvar.controller("myctrl",function($scope){
+      $scope.fruits=["Apple","Mango","Grape"];
+    });
+   </script>
+</head>
+<body>
+   <div ng-controller="myctrl">
+      Fruits List
+      <p ng-repeat="fruit in fruits">
+         {{fruit}}
+      </p>
+   </div>
+    
+</body>
+</html>
