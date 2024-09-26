@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ngSwitch_DarshanMistari">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var myvar = angular.module("ngSwitch_DarshanMistari",[]);
+        myvar.controller("myctrl",function($scope){
+            $scope.selectedfruit='';
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="myctrl">
+        Fruits List
+        <select ng-model="selectedfruit">
+            <option value="Apple">Apple</option>
+            <option value="Mango">Mango</option>
+            <option value="Grapes">Grapes</option>
+        </select>
+        
+        <div ng-switch="selectedfruit">
+            <p ng-switch-when="Apple">The Selected Fruit is Apple</p>
+        <p ng-switch-when="Mango">The Selected Fruit is Mango</p>
+        <p ng-switch-when="Grapes">The Selected Fruit is Grapes</p>
+        <p ng-switch-default>Please Select the Fruit</p>
+        </div>
+
+    </div>
+    
+</body>
+</html>
