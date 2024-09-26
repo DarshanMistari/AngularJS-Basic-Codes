@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="loginapp_DarshanMistari">
+
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <script>
+      var myvar = angular.module("loginapp_DarshanMistari", []);
+      myvar.controller("loginctrl", function ($scope) {
+         $scope.massage = '';
+         $scope.uservalidation = '';
+         $scope.passwordvalidation = '';
+
+         $scope.submitform = function () {
+            if ($scope.username === "") {
+               $scope.username = "Please Enter the Username";
+            }
+            else if ($scope.password === "") {
+               $scope.passwordvalidation = "Please Enter the Password";
+            }
+            else if ($scope.username === "admin" && $scope.password === "123") {
+               $scope.massage = "Welcome Admin";
+            }
+            else {
+               scope.massage = "Sorry !!! Invalid User";
+            }
+         };
+      });
+   </script>
+</head>
+
+<body>
+
+   <div ng-controller="loginctrl">
+      Login From
+      <br><br>
+      <form ng-submit="submitform()">
+         
+         Enter the UserName :<input type="text" ng-model="username" required>
+         <br><br>
+         <p>{{uservalidation}}</p>
+
+         Enter the Password : <input type="text" ng-model="password" required>
+         <br><br>
+         <p>{{passwordvalidation}}</p>
+
+         <button type="submit">Submit </button>
+
+         <p>{{massage}}</p>
+      </form>
+   </div>
+</body>
+
+</html>
