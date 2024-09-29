@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event ng-mouseenter </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let app = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.number = 0;
+        $scope.myFunction = function(){
+        $scope.number++;
+    };
+});
+    </script>
+</head>
+
+<body ng-controller="myController">
+
+    <h1>MouseEnter Event</h1>
+
+    <input type="button" value="Click" ng-mouseenter="myFunction()">
+
+    <h2> {{ number }} </h2>
+</body>
+
+</html>
