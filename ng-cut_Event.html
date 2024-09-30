@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-cut Event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let app = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.num = 0;
+        $scope.myFunction = function(){
+        $scope.msg="text is cut";
+        $scope.num++;
+    };
+});
+    </script>
+</head>
+<body ng-controller="myController">
+    
+    <h1>ng-cut Event</h1>
+
+    <input type="text" ng-cut="myFunction()">
+
+    <h1> {{ num }} </h1>
+    <br>
+    <h1> {{ msg }} </h1>
+</body>
+</html>
