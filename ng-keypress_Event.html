@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ng-keypress Event </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script >
+        let app  = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.number = 0;
+        $scope.myFunction = function(){
+        $scope.number++;
+    };
+});
+    </script>
+</head>
+
+<body ng-controller="myController">
+
+    <h1> ng-keypress Event </h1>
+
+    <input type="text" ng-keypress="myFunction()">
+
+    <h3> {{ number }} </h3>
+</body>
+
+</html>
