@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select option and Print</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app>
+    <h2>Select Your Name :</h2>
+    <br>
+
+    <select ng-model="name">
+        <option value="Darshan">Darshan</option>
+        <option value="Kalpesh">Kalpesh</option>
+        <option value="Ritesh">Ritesh</option>
+        <option value="Hitesh">Hitesh</option>
+        <option value="Paresh">Paresh</option>
+    </select>
+
+    <br>
+    <h1>Your Good Name :</h1>
+    <h1 ng-bind="name"></h1>
+</body>
+
+</html>
