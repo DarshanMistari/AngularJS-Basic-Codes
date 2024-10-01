@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ng-rapeat directive </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let app = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.fruits=["Apple","Graphes","Mango","Banana","draygon","cheri"];
+});
+    </script>
+</head>
+
+<body ng-controller="myController">
+
+    <h1> ng-change directive </h1>
+    <br>
+
+    <ol>
+        <li ng-repeat="items in fruits">
+            {{ items }}
+        </li>
+    </ol>
+
+    <h1 ng-repeat="item in fruits">
+        {{ item }}
+    </h1>
+</body>
+
+</html>
