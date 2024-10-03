@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let app = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.amount = 25000;
+});
+    </script>
+</head>
+<body ng-controller="myController">
+    
+    <h1> Currency Filter</h1>
+    <br>
+    <h1> {{ amount }} </h1>
+    <br>
+    <h1> {{ amount | currency:"&euro;" }} </h1>
+    <br>
+    <h1> {{ amount | currency:"Rs"}} </h1>
+   
+</body>
+</html>
