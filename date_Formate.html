@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Formate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script >
+        let app = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.myDate = new Date();
+});
+    </script>
+</head>
+<body ng-controller="myController">
+    
+    <h1>Date using Date Formate</h1>
+
+    <h2> {{ myDate | date:"dd-MM-y" }} </h2>
+    <br>
+    <h2> {{ myDate | date:"d-MMMM-yy" }} </h2>
+    <br>
+    <h3> {{ myDate | date:"EEE / MMM / yyyy" }} </h3>
+</body>
+</html>
