@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ng-change directive Select Option </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script >
+        let app = angular.module("module",[]);
+        app.controller("myController",function($scope){
+        $scope.number = 0;
+        $scope.myFunction = function(){
+        $scope.number++;
+        $scope.msg="ng-change directive";
+    };
+});
+    </script>
+</head>
+
+<body ng-controller="myController">
+
+    <h1> ng-change directive Select Option </h1>
+    <br>
+    <select ng-model="val" ng-change="myFunction()">
+        <option value="">Select your Name</option>
+        <option value="Darshan">Darshan</option>
+        <option value="Kalpesh">Kalpesh</option>
+        <option value="Kunal">Kunal</option>
+        <option value="Ritesh">Ritesh</option>
+        <option value="Hitesh">Hitesh</option>
+        <option value="Paresh">Paresh</option>
+    </select>
+
+    <h1> {{ val }} </h1>
+    <br>
+    <h1> {{ number }} </h1>
+    <br>
+    <h1> {{ msg }} </h1>
+</body>
+
+</html>
