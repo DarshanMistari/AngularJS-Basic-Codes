@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tDataBind">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var myvar = angular.module("tDataBind",[]);
+        myvar.controller("myctr",function($scope){
+
+            $scope.name;
+            $scope.id;
+            $scope.class;
+        });
+    </script>
+</head>
+<body>
+
+    <div ng-controller="myctr">
+        Enter the Name : <input type="text" ng-model="name"><br><br>
+        Enter the Id Number : <input type="text" ng-model="id"><br><br>
+        Enter the Class : <input type="text" ng-model="class"><br><br>
+
+        <p>My Name is : {{name}}</p>
+        <p>MY id Number is : {{id}}</p>
+        <p>My Class is : {{class}}</p>
+    </div>
+    
+</body>
+</html>
