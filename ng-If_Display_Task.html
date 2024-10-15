@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ifdemo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-if Demo </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let myvar = angular.module("ifdemo",[]);
+        myvar.controller("myctrl",function($scope){
+            $scope.status = true;
+
+            $scope.show = function(){
+                $scope.status = true;
+            }
+
+            $scope.hide = function()
+            {
+                $scope.status = false;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="myctrl">
+        <p ng-if="status">This is My Message</p>
+        <button ng-click="show()">Show</button>
+        <button ng-click="hide()">Hide</button>
+    </div>
+    
+</body>
+</html>
