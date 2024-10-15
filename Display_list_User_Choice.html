@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="choicelist">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display List in User Choices</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let myvar = angular.module("choicelist",[]);
+        myvar.controller("myctrl",function($scope){
+            $scope.E_Commerce = false;
+            $scope.Cloud = false;
+            $scope.Employbility = false;
+            $scope.AngularJS = false;
+
+            $scope.getSelectedOption = function()
+            {
+                var selectedSubject = [];
+                if($scope.E_Commerce) console.log("E_Commerce");
+                if($scope.Cloud) console.log("Cloud");
+                if($scope.Employbility) console.log("Emloybility");
+                if($scope.AngularJS) console.log("AngularJs");
+                return selectedSubject;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="myctrl">
+        <h1>Display list User Choices</h1>
+
+        <h4>Select Subject :</h4>
+         
+        <form>
+            E_Commerce : <input type="checkbox" ng-model="E_Commerce">
+            <br>
+            Cloud : <input type="checkbox" ng-model="Cloud">
+            <br>
+            Employbility : <input type="checkbox" ng-model="Employbility">
+            <br>
+            AngularJS : <input type="checkbox" ng-model="AngularJS">
+            <br>
+            <br>
+            <button ng-click="getSelectedOption()">get select option</button>
+
+        </form>
+    </div>
+    
+</body>
+</html>
