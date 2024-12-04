@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="userchoice">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script>
+        var myvar = angular.module("userchoice",[]);
+        myvar.controller("myctrl",function($scope){
+            $scope.english=false;
+            $scope.math=false;
+            $scope.Java=false;
+            $scope.JDBC=false;
+
+            $scope.getSubjectUser = function(){
+                var selectSubject=[];
+
+                if($scope.english) console.log('English');
+                if($scope.math) console.log("Math");
+                if($scope.Java) console.log("Java");
+                if($scope.JDBC) console.log("JDBC");
+                return selectSubject;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="myctrl">
+
+        <form>
+            <h1>User Task UI</h1>
+            <input type="checkbox" ng-model="english">English <br>
+            <input type="checkbox" ng-model="math">Math <br>
+            <input type="checkbox" ng-model="Java">Java <br>
+            <input type="checkbox" ng-model="JDBC">JDBC <br>
+            <br><br>
+            <button ng-click="getSubjectUser()">Submit</button>
+            <!-- <p>{{selectSubject}}</p> -->
+        </form>
+
+    </div>
+    
+</body>
+</html>
